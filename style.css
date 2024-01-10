@@ -1,8 +1,17 @@
 a {
-  color: black;
+  color: whitesmoke;
+}
+
+a.imageLink {
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 body {
-  background-color: rgb(168, 124, 71);
+  background-color: rgb(32, 30, 36);
+  color: whitesmoke;
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+
 }
