@@ -1,3 +1,0 @@
-=== Web Design Notes ===
-
-- To open link in new tab -> <a target="_blank">
