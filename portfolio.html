@@ -3,66 +3,13 @@
 <html>
 
 <head>
-  <title> David Kim's Website - Art</title>
-  <link rel="icon" href="images/website_icon.ico">
+  <title> David Kim's Website - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Arvo">
+  <link rel="icon" href="data/website_icon.ico">
 
   <style>
-    a {
-      color: black;
-    }
-
-    body {
-      background-color: whitesmoke;
-      color: black;
-      text-align: center;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 18px;
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 54px;
-
-    }
-
-    #navBar {
-      text-align: center;
-      list-style-type: none;
-    }
-
-    #navBar ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: rgba(173, 165, 177, 0.5);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1;
-
-    }
-
-    #navBar li {
-      float: left;
-    }
-
-    #navBar li a {
-      text-decoration: none;
-      display: block;
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      text-align: center;
-      background-color: none;
-    }
-
-    #navBar li a:hover {
-      transition: .2s;
-      background-color: rgb(133, 124, 145);
-      color: whitesmoke;
-    }
-
+    /* Portfolio Specific */
     .artTable {
       display: flex;
       justify-content: center;
@@ -85,6 +32,7 @@
       max-width: 500px;
       max-height: 500px;
       box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.4);
+      transition: 0.0s;
 
     }
   </style>
@@ -92,32 +40,48 @@
 
 <body>
   <!-- Navigation Bar -->
-  <nav id="navBar">
+  <a class="bigName" href="index.html">david kim</a>
+
+  <nav>
     <ul>
-      <li><a href="index.html#links">Links</a></li>
-      <li><a href="index.html#about">About Me</a></li>
-      <li><a href="index.html#code">Code</a> </li>
-      <li><a href="index.html#art">Art</a></li>
-      <li style="float: right;"><a href="https://dsykim.github.io">David Kim</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="publications.html">publications</a></li>
+      <li><a href="portfolio.html" class="thisPage">portfolio</a></li>
     </ul>
+
   </nav>
 
   <br><br>
 
   <h2>My Art</h2>
 
+  <p>
+    Hover over an image to see the full thumbnail, click to open in new tab.
+  </p>
   <br><br>
 
   <table class="artTable">
     <tr>
-      <td><img src="images/portfolio/wm.png"></td>
-      <td><img src="images/portfolio/robot.jpeg"></td>
-      <td><img src="images/portfolio/warmup.jpeg"></td>
+      <td>
+        <a href="data/portfolio/wm.png" target="_blank"><img src="data/portfolio/wm.png"></a>
+      </td>
+      <td>
+        <a href="data/portfolio/robot.jpeg" target="_blank"><img src="data/portfolio/robot.jpeg"></a>
+      </td>
+      <td>
+        <a href="data/portfolio/warmup.jpeg" target="_blank"><img src="data/portfolio/warmup.jpeg"></a>
+      </td>
     </tr>
     <tr>
-      <td><img src="images/portfolio/tiger.jpeg"></td>
-      <td><img src="images/portfolio/sketch1.PNG"></td>
-      <td><img src="images/portfolio/sketch2.PNG"></td>
+      <td>
+        <a href="data/portfolio/tiger.jpeg" target="_blank"><img src="data/portfolio/tiger.jpeg"></a>
+      </td>
+      <td>
+        <a href="data/portfolio/sketch1.PNG" target="_blank"><img src="data/portfolio/sketch1.PNG"></a>
+      </td>
+      <td>
+        <a href="data/portfolio/sketch2.PNG" target="_blank"><img src="data/portfolio/sketch2.PNG"></a>
+      </td>
     </tr>
 
   </table>
