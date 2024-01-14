@@ -1,17 +1,117 @@
 a {
-  color: whitesmoke;
+  color: black;
 }
 
 a.imageLink {
   text-decoration: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.headshot {
+  position: relative;
+  top: 35px;
+}
+
+h2 {
+  font-size: 42px;
 }
 
 body {
-  background-color: rgb(32, 30, 36);
-  color: whitesmoke;
+  background-color: whitesmoke;
+  color: black;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif; */
+  font-size: 18px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 54px;
 
+}
+
+#navBar {
+  text-align: center;
+  list-style-type: none;
+}
+
+#navBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(173, 165, 177, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+}
+
+#navBar li {
+  float: left;
+}
+
+#navBar li a {
+  text-decoration: none;
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  background-color: none;
+}
+
+#navBar li a:hover {
+  transition: .2s;
+  background-color: rgb(133, 124, 145);
+  color: whitesmoke;
+}
+
+.container {
+  margin: auto;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 360px;
+}
+
+.container img {
+  /* width: 100%; */
+  width: 360px;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 360px;
+  line-height: 360px;
+  font-size: 32px;
+  font-weight: bolder;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+.container:hover .overlay {
+  opacity: 0;
+}
+
+#about {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.anchor {
+  display: block;
+  height: 115px;
+  margin-top: -115px;
+  visibility: hidden;
 }

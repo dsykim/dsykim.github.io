@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title> David Kim's Website - Art</title>
+  <link rel="icon" href="images/website_icon.ico">
+
+  <style>
+    a {
+      color: black;
+    }
+
+    body {
+      background-color: whitesmoke;
+      color: black;
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 18px;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 54px;
+
+    }
+
+    #navBar {
+      text-align: center;
+      list-style-type: none;
+    }
+
+    #navBar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: rgba(173, 165, 177, 0.5);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+
+    }
+
+    #navBar li {
+      float: left;
+    }
+
+    #navBar li a {
+      text-decoration: none;
+      display: block;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-align: center;
+      background-color: none;
+    }
+
+    #navBar li a:hover {
+      transition: .2s;
+      background-color: rgb(133, 124, 145);
+      color: whitesmoke;
+    }
+
+    .artTable {
+      display: flex;
+      justify-content: center;
+    }
+
+    .artTable tr td {
+      width: 300px;
+      height: 300px;
+      padding: 20px;
+    }
+
+    .artTable tr td img {
+      object-fit: cover;
+      width: 300px;
+      height: 300px;
+    }
+
+    .artTable tr td img:hover {
+      object-fit: contain;
+      max-width: 500px;
+      max-height: 500px;
+      box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.4);
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav id="navBar">
+    <ul>
+      <li><a href="index.html#links">Links</a></li>
+      <li><a href="index.html#about">About Me</a></li>
+      <li><a href="index.html#code">Code</a> </li>
+      <li><a href="index.html#art">Art</a></li>
+      <li style="float: right;"><a href="https://dsykim.github.io">David Kim</a></li>
+    </ul>
+  </nav>
+
+  <br><br>
+
+  <h2>My Art</h2>
+
+  <br><br>
+
+  <table class="artTable">
+    <tr>
+      <td><img src="images/portfolio/wm.png"></td>
+      <td><img src="images/portfolio/robot.jpeg"></td>
+      <td><img src="images/portfolio/warmup.jpeg"></td>
+    </tr>
+    <tr>
+      <td><img src="images/portfolio/tiger.jpeg"></td>
+      <td><img src="images/portfolio/sketch1.PNG"></td>
+      <td><img src="images/portfolio/sketch2.PNG"></td>
+    </tr>
+
+  </table>
+
+
+</body>
+
+
+</html>
