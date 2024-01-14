@@ -70,11 +70,6 @@
    text-underline-position: under;
  }
 
- .thisPage a {
-   text-decoration: underline;
-   text-underline-position: under;
- }
-
  .bigName {
    font-family: 'Arvo', Georgia, serif;
    font-weight: bold;
