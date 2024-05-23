@@ -79,3 +79,9 @@
    top: 30px;
    padding: 0;
  }
+
+ .content:hover {
+   transition: .2s;
+   text-decoration: underline;
+   text-underline-position: under;
+ }
