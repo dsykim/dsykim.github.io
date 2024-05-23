@@ -80,7 +80,7 @@
    padding: 0;
  }
 
- .content:hover {
+ .content li:hover {
    transition: .2s;
    text-decoration: underline;
    text-underline-position: under;
