@@ -81,10 +81,11 @@
  }
 
  .content ul {
+   text-decoration: none;
    list-style-type: none;
  }
 
- .content li:hover {
+ .content a:hover {
    transition: .2s;
    text-decoration: underline;
    text-underline-position: under;
