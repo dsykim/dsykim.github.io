@@ -80,6 +80,10 @@
    padding: 0;
  }
 
+ .content ul {
+   list-style-type: none;
+ }
+
  .content li:hover {
    transition: .2s;
    text-decoration: underline;
