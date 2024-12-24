@@ -9,6 +9,72 @@
   <link rel="icon" href="data/website_icon.ico">
 
   <style>
+    /* Index Specific */
+
+    .navTable {
+      display: flex;
+      justify-content: center;
+      font-family: 'Arvo', Georgia, serif;
+    }
+
+    .navTable tr td {
+      width: 320px;
+      height: 320px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+    }
+
+    .navTable tr td img {
+      width: 320px;
+      height: 320px;
+    }
+
+    .container {
+      margin: 0;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      width: 320px;
+    }
+
+    .container img {
+      width: 320px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 320px;
+      height: 320px;
+      line-height: 320px;
+      font-size: 32px;
+      font-weight: bolder;
+      background-color: rgba(255, 255, 255, 0.6);
+      opacity: 1;
+      transition: opacity 0.15s;
+    }
+
+    .container:hover .overlay {
+      opacity: 0;
+    }
+
+    #about {
+      margin-left: 25%;
+      margin-right: 25%;
+    }
+
+    .anchor {
+      display: block;
+      height: 115px;
+      margin-top: -115px;
+      visibility: hidden;
+    }
   </style>
 </head>
 
@@ -51,9 +117,9 @@
       <td>
         <!-- <img src="data/portfolio/warmup.jpeg" class="image"> -->
         <div class="container">
-          <img src="data/projects-thumbnail.png" class="image">
+          <img src="data/seasthethrone.png" class="image">
           <a id="projects" href="projects.html">
-            <div class="overlay">Projects</div>
+            <div class="overlay">Seas the Throne</div>
           </a>
         </div>
       </td>
@@ -61,8 +127,8 @@
       <td>
         <!-- <img src="data/robot-square.jpeg" class="image"> -->
         <div class="container">
-          <img src="data/publications-thumbnail.png" class="image">
-          <a id="publications" href="publications.html">
+          <img src="data/seasthethrone.png" class="image">
+          <a id="projects" href="projects.html">
             <div class="overlay">Publications</div>
           </a>
         </div>
@@ -71,8 +137,8 @@
       <td>
         <!-- <img src="data/portfolio/warmup.jpeg" class="image"> -->
         <div class="container">
-          <img src="data/robot-square.jpeg" class="image">
-          <a id="portfolio" href="portfolio.html">
+          <img src="data/seasthethrone.png" class="image">
+          <a id="projects" href="projects.html">
             <div class="overlay">Portfolio</div>
           </a>
         </div>
