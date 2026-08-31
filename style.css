@@ -1,101 +1,189 @@
- /* Universal */
- a {
-   color: black;
-   text-decoration: none;
- }
+/* Universal */
+:root {
+  --white-color: rgb(247, 244, 237);
+  --accent-color: rgb(116, 193, 182);
+  --bg-color: rgb(32, 31, 36);
+}
 
- a.imageLink {
-   padding-left: 15px;
-   padding-right: 15px;
- }
+a {
+  color: var(--white-color);
+  text-decoration: none;
+}
 
- .headshot {
-   position: relative;
-   top: 45px;
-   padding-left: 15px;
-   padding-right: 15px;
- }
+a.imageLink {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
- h2 {
-   font-family: 'Arvo', Georgia, serif;
-   font-size: 42px;
- }
+h2 {
+  font-family: 'Arvo', Georgia, serif;
+  font-size: 42px;
+  color: var(--accent-color)
+}
 
- h3 {
-   font-family: 'Arvo', Georgia, serif;
-   font-size: 36px;
-   margin: 4px;
- }
+h3 {
+  font-family: 'Arvo', Georgia, serif;
+  font-size: 36px;
+  margin: 4px;
+}
 
- body {
-   background-color: whitesmoke;
-   color: black;
-   text-align: center;
-   font-family: 'Poppins', Arial, sans-serif;
-   font-size: 18px;
-   width: 100%;
-   margin-left: 0;
-   margin-right: 0;
-   margin-top: 0;
+body {
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  text-align: center;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 16px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0;
 
- }
+}
 
- nav {
-   text-align: center;
-   width: 100%;
-   padding: 0;
-   margin-top: 25px;
-   margin-bottom: 20px;
-   text-decoration: none;
-   overflow: hidden;
- }
+/* == Top bar == */
+#nav-container {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 72px;
+  top: 0px;
+  background-color: var(--bg-color);
+  border-bottom: 0.4px solid var(--white-color);
+  box-sizing: border-box;
+  padding: 0 0px;
+  margin-left: 0%;
+  margin-right: 0%;
+  z-index:999;
+}
 
- nav ul {
-   list-style-type: none;
-   padding: 0;
- }
+nav {
+  text-align: center;
+  padding: 0;
+  text-decoration: none;
+  overflow: hidden;
+  --underline-left: 0px;
+  --underline-width: 0px;
+  position: relative;
+}
 
- nav li {
-   display: inline;
-   top: 0;
-   padding-left: 16px;
-   padding-right: 16px;
-   padding-top: 8px;
-   padding-bottom: 8px;
- }
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0;
+}
 
- nav a:hover {
-   transition: .2s;
-   text-decoration: underline;
-   text-underline-position: under;
- }
+nav li {
+  display: inline-block;
+  font-size: 18px;
+  top: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
 
- .bigName {
-   font-family: 'Arvo', Georgia, serif;
-   font-weight: bold;
-   font-size: 45px;
-   position: absolute;
-   left: 60px;
-   top: 30px;
-   padding: 0;
- }
+nav li.a {
+  color: var(--white-color)
+}
 
- .content ul {
-   text-decoration: none;
-   text-align: center;
-   padding: 0;
-   list-style-type: none;
- }
+nav::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: var(--underline-left);
+  width: var(--underline-width);
+  height: 2px;
+  background: var(--white-color);
+  transition: left 0.2s ease, width 0.2s ease;
+}
 
- .content a:hover {
-   transition: .2s;
-   text-decoration: underline;
-   text-underline-position: under;
- }
+#nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav.no-transition::after {
+  transition: none;
+}
+
+.bigName {
+  font-family: 'Arvo', Georgia, serif;
+  font-weight: bold;
+  font-size: 45px;
+  color: var(--accent-color)
+}
+
+.iconLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.iconLinks img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.iconLinks a img {
+  transition: filter 0s;
+  border-radius: 2px;
+}
+
+.iconLinks a:hover img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(21%) saturate(592%) hue-rotate(122deg) brightness(94%) contrast(90%);
+}
+
+/* == End Top Bar == */
+
+/* FRONT PAGE */
+#about-section {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  padding-top: 20px;
+}
+
+#about {
+  text-align: left;
+  flex: 1;
+  padding-top: 0;
+}
+
+.headshot {
+  flex-shrink: 1;
+  padding-right: 40px;
+}
+
+.headshot img {
+  width: 280px;
+  display: block;
+}
+
+#page-title {
+  text-align: left;
+  padding-top: 20px;
+}
+
+.content ul {
+  text-decoration: none;
+  text-align: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+.content a:hover {
+  transition: .2s;
+  text-decoration: underline;
+  text-underline-position: under;
+}
 
 .navTable {
+  text-align: center;
   display: flex;
-  justify-content: center;
   font-family: 'Arvo', Georgia, serif;
 }
 
@@ -104,6 +192,7 @@
   height: 320px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 40px;
 
 }
 
@@ -130,6 +219,7 @@
 
 .overlay {
   position: absolute;
+  text-align: center;
   top: 0;
   left: 0;
   width: 320px;
@@ -138,6 +228,7 @@
   font-size: 32px;
   font-weight: bolder;
   background-color: rgba(255, 255, 255, 0.6);
+  color: var(--bg-color);
   opacity: 1;
   transition: opacity 0.15s;
 }
@@ -146,14 +237,100 @@
   opacity: 0;
 }
 
-#about {
-  margin-left: 25%;
-  margin-right: 25%;
-}
-
 .anchor {
   display: block;
   height: 115px;
   margin-top: -115px;
   visibility: hidden;
+}
+
+/* Projects page - vertical layout */
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 12px;
+}
+
+.projectRow {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.projectImageLink {
+  flex: 0 0 20%;
+  max-width: 20%;
+  display: block;
+}
+
+.projectImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.15s;
+}
+
+.projectImageLink:hover .projectImage {
+  opacity: 0.8;
+}
+
+.projectInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.projectInfo h3 {
+  margin: 0 0 12px 0;
+}
+
+.projectInfo h3 a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.projectInfo p {
+  margin: 0;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+@media (max-width: 640px) {
+  .projectRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .projectImageLink {
+    max-width: 100%;
+  }
+}
+
+/* Portfolio Specific */
+.artTable {
+  display: flex;
+  justify-content: center;
+}
+
+.artTable tr td {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+}
+
+.artTable tr td img {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.artTable tr td img:hover {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+  box-shadow: 0 0 12px 6px var(--white-color);
 }

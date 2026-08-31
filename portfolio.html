@@ -8,53 +8,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Arvo">
   <link rel="icon" href="data/website_icon.ico">
 
-  <style>
-    /* Portfolio Specific */
-    .artTable {
-      display: flex;
-      justify-content: center;
-    }
-
-    .artTable tr td {
-      width: 300px;
-      height: 300px;
-      padding: 20px;
-    }
-
-    .artTable tr td img {
-      object-fit: cover;
-      width: 300px;
-      height: 300px;
-    }
-
-    .artTable tr td img:hover {
-      object-fit: contain;
-      max-width: 500px;
-      max-height: 500px;
-      box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.4);
-      transition: 0.0s;
-
-    }
-  </style>
 </head>
 
 <body>
   <!-- Navigation Bar -->
-  <a class="bigName" href="index.html">david kim</a>
+  <div id="nav-container"></div>
+  <script src="nav.js"></script>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">home</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="publications.html">publications</a></li>
-      <li><a href="portfolio.html">artwork</a></li>
-    </ul>
+  <div id="page-title">
+    <h2>Artwork</h2>
+  </div>
 
-  </nav>
-
-  <br><br>
-
-  <h2>My Art</h2>
 
   <p>
     Hover over an image to see the full thumbnail, click to open in new tab.
