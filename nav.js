@@ -1,18 +1,27 @@
 (function () {
   // --- Inject nav HTML ---
   const navHTML = `
-    <nav>
-      <ul>
-        <li><a href="index.html">home</a></li>
-        <li><a href="projects.html">projects</a></li>
-        <li><a href="publications.html">publications</a></li>
-        <li><a href="portfolio.html">artwork</a></li>
-      </ul>
-    </nav>
-    <a class="bigName" href="index.html">david kim</a>
+    <a class="bigName" href="index.html">David Kim</a>
+    <div id="nav-right">
+      <nav>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="projects.html">projects</a></li>
+          <li><a href="publications.html">publications</a></li>
+          <li><a href="portfolio.html">artwork</a></li>
+        </ul>
+      </nav>
+      <div class="iconLinks">
+        <a href="#contact"><img src="data/email-offwhite.png"></a>
+        <a href="https://github.com/dsykim" target="_blank"><img src="data/github-offwhite.png"></a>
+        <a href="https://www.linkedin.com/in/david-kim-a34b86289/" target="_blank"><img src="data/linkedin-offwhite.png"></a>
+        <a href="data/david_kim_resume.pdf" target="_blank"><img src="data/cv-offwhite.png"></a>
+      </div>
+    </div>
+    
   `;
 
-  const placeholder = document.getElementById('nav-placeholder');
+  const placeholder = document.getElementById('nav-container');
   placeholder.innerHTML = navHTML;
 
   // --- Underline logic ---

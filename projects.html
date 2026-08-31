@@ -7,121 +7,59 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Arvo">
   <link rel="icon" href="data/website_icon.ico">
-
-  <style>
-    /* Index Specific */
-
-    .navTable {
-      display: flex;
-      justify-content: center;
-      font-family: 'Arvo', Georgia, serif;
-    }
-
-    .navTable tr td {
-      width: 320px;
-      height: 320px;
-      padding-left: 20px;
-      padding-right: 20px;
-
-    }
-
-    .navTable tr td img {
-      width: 320px;
-      height: 320px;
-    }
-
-    .container {
-      margin: 0;
-      position: relative;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      width: 320px;
-    }
-
-    .container img {
-      width: 320px;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 320px;
-      height: 320px;
-      line-height: 320px;
-      font-size: 32px;
-      font-weight: bolder;
-      background-color: rgba(255, 255, 255, 0.6);
-      opacity: 1;
-      transition: opacity 0.15s;
-    }
-
-    .container:hover .overlay {
-      opacity: 0;
-    }
-
-    #about {
-      margin-left: 25%;
-      margin-right: 25%;
-    }
-
-    .anchor {
-      display: block;
-      height: 115px;
-      margin-top: -115px;
-      visibility: hidden;
-    }
-  </style>
 </head>
 
 <body>
   <!-- Navigation Bar -->
-  <div id="nav-placeholder"></div>
+  <div id="nav-container"></div>
   <script src="nav.js"></script>
 
-  <br><br>
+  <div id="page-title">
+    <h2>Projects</h2>
 
-  <h2>Projects</h2>
-
-  <table class="navTable">
-    <tr>
-      <td>
-        <!-- <img src="data/portfolio/warmup.jpeg" class="image"> -->
-        <div class="container">
-          <img src="data/seasthethrone.png" class="image">
-          <a id="projects" href="https://github.coecis.cornell.edu/jk2582/seas-the-throne/releases">
-            <div class="overlay">Seas the Throne</div>
-          </a>
+    <div class="projectList">
+      <div class="projectRow">
+        <a class="projectImageLink" href="https://github.coecis.cornell.edu/jk2582/seas-the-throne/releases">
+          <img src="data/seasthethrone.png" class="projectImage">
+        </a>
+        <div class="projectInfo">
+          <h3><a href="https://github.coecis.cornell.edu/jk2582/seas-the-throne/releases">Seas the Throne</a></h3>
+          <p>A bullet-hell RPG for PC made in libGDX. I was the team lead and contributed to both the art and programming for this game. </p>
         </div>
-      </td>
+      </div>
 
-      <td>
-        <!-- <img src="data/portfolio/warmup.jpeg" class="image"> -->
-        <div class="container">
-          <img src="data/apathia-tile.png" class="image">
-          <a id="projects" href="https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/apathia/">
-            <div class="overlay">Apathia</div>
-          </a>
+      <div class="projectRow">
+        <a class="projectImageLink" href="https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/apathia/">
+          <img src="data/apathia-tile.png" class="projectImage">
+        </a>
+        <div class="projectInfo">
+          <h3><a href="https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/apathia/">Apathia</a></h3>
+          <p>A tactical 1v1 battler for mobile. I was the team lead and contributed to both the art and programming for this game.</p>
         </div>
-      </td>
+      </div>
 
-      <td>
-        <!-- <img src="data/robot-square.jpeg" class="image"> -->
-        <div class="container">
-          <img src="data/prometheus.png" class="image">
-          <a id="projects" href="https://github.com/Harvard-Neutrino/prometheus">
-            <div class="overlay">Prometheus</div>
-          </a>
+      <div class="projectRow">
+        <a class="projectImageLink" href="https://github.coecis.cornell.edu/jk2582/seas-the-throne/releases">
+          <img src="data/render_studio.png" class="projectImage">
+        </a>
+        <div class="projectInfo">
+          <h3><a href="https://github.coecis.cornell.edu/jk2582/seas-the-throne/releases">Easy Render Studio</a></h3>
+          <p>A browser-based tool for creating stylized 2D-animation filmstrips from 3D models. Created in collaboration with one other member.</p>
         </div>
-      </td>
+      </div>
 
+      <div class="projectRow">
+        <a class="projectImageLink" href="https://github.com/Harvard-Neutrino/prometheus">
+          <img src="data/prometheus.png" class="projectImage">
+        </a>
+        <div class="projectInfo">
+          <h3><a href="https://github.com/Harvard-Neutrino/prometheus">Prometheus</a></h3>
+          <p>A saoftware package for simulating neutrino telescopes. I worked on verification through neutrino path reconstruction.</p>
+        </div>
+      </div>
 
-    </tr>
-  </table>
+    </div>
+  </div>
 
 </body>
 
