@@ -58,17 +58,6 @@ body {
   z-index:999;
 }
 
-#nav-container::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 100%;
-  height: 100vh;
-  background-color: var(--bg-color);
-  pointer-events: none;
-}
-
 nav {
   text-align: center;
   padding: 0;
@@ -298,7 +287,7 @@ nav.no-transition::after {
   visibility: hidden;
 }
 
-/* Projects page*/
+/* Projects page - vertical layout */
 .projectList {
   display: flex;
   flex-direction: column;
@@ -384,8 +373,16 @@ nav.no-transition::after {
 
 /* == Breakpoints (desktop-first) == */
 @media (max-width: 860px) {
+  html {
+    overflow-x: clip;
+  }
+
   #nav-container {
     gap: 12px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0 calc(50vw - 50%);
   }
 
   .menuToggle {
@@ -469,11 +466,6 @@ nav.no-transition::after {
 }
 
 @media (max-width: 700px) {
-  /* body {
-    width: auto;
-    margin-left: 16px;
-    margin-right: 16px;
-  } */
 
   #about-section {
     flex-direction: column;
