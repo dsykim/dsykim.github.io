@@ -17,13 +17,13 @@ a.imageLink {
 
 h2 {
   font-family: 'Arvo', Georgia, serif;
-  font-size: 42px;
+  font-size: clamp(28px, 3.5vw, 42px);
   color: var(--accent-color)
 }
 
 h3 {
   font-family: 'Arvo', Georgia, serif;
-  font-size: 36px;
+  font-size: clamp(24px, 3vw, 36px);
   margin: 4px;
 }
 
@@ -47,7 +47,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 72px;
+  min-height: 72px;
   top: 0px;
   background-color: var(--bg-color);
   border-bottom: 0.4px solid var(--white-color);
@@ -76,10 +76,10 @@ nav ul {
 
 nav li {
   display: inline-block;
-  font-size: 18px;
+  font-size: clamp(15px, 1.5vw, 18px);
   top: 0;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: clamp(6px, 1vw, 12px);
+  padding-right: clamp(6px, 1vw, 12px);
   padding-top: 8px;
   padding-bottom: 8px;
 }
@@ -102,7 +102,7 @@ nav::after {
 #nav-right {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: clamp(12px, 2vw, 24px);
 }
 
 nav.no-transition::after {
@@ -112,19 +112,21 @@ nav.no-transition::after {
 .bigName {
   font-family: 'Arvo', Georgia, serif;
   font-weight: bold;
-  font-size: 45px;
-  color: var(--accent-color)
+  font-size: clamp(26px, 3.75vw, 45px);
+  color: var(--accent-color);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .iconLinks {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: clamp(8px, 1.33vw, 16px);
 }
 
 .iconLinks img {
-  width: 32px;
-  height: 32px;
+  width: clamp(24px, 2.67vw, 32px);
+  height: clamp(24px, 2.67vw, 32px);
   display: block;
 }
 
@@ -137,13 +139,12 @@ nav.no-transition::after {
   filter: brightness(0) saturate(100%) invert(72%) sepia(21%) saturate(592%) hue-rotate(122deg) brightness(94%) contrast(90%);
 }
 
-/* == End Top Bar == */
 
 /* FRONT PAGE */
 #about-section {
   display: flex;
   align-items: center;
-  gap: 120px;
+  gap: clamp(32px, 10vw, 120px);
   padding-top: 20px;
 }
 
@@ -159,8 +160,13 @@ nav.no-transition::after {
 }
 
 .headshot img {
-  width: 280px;
+  width: clamp(160px, 23vw, 280px);
+  max-width: 100%;
   display: block;
+}
+
+#contact {
+  margin-top: clamp(80px, 18vw, 280px);
 }
 
 #page-title {
@@ -173,6 +179,10 @@ nav.no-transition::after {
   text-align: center;
   padding: 0;
   list-style-type: none;
+}
+
+.content li + li {
+  margin-top: 24px;
 }
 
 .content a:hover {
@@ -244,7 +254,6 @@ nav.no-transition::after {
   visibility: hidden;
 }
 
-/* Projects page - vertical layout */
 .projectList {
   display: flex;
   flex-direction: column;
@@ -255,7 +264,7 @@ nav.no-transition::after {
 .projectRow {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: clamp(16px, 3.33vw, 40px);
   text-align: left;
 }
 
@@ -297,6 +306,59 @@ nav.no-transition::after {
   max-width: 65ch;
 }
 
+.artGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 40px;
+  max-width: 980px; /* 3 x 300px cells + 2 x 40px gaps */
+  margin: 0 auto;
+}
+
+.artGrid a {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artGrid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.artGrid a:hover img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 0 12px 6px var(--white-color);
+}
+
+/* == Breakpoints == */
+@media (max-width: 700px) {
+  body {
+    width: auto;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  #about-section {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #about {
+    flex: none;
+  }
+
+  .headshot {
+    order: -1;
+    padding-right: 0;
+  }
+}
+
 @media (max-width: 640px) {
   .projectRow {
     flex-direction: column;
@@ -307,30 +369,4 @@ nav.no-transition::after {
   .projectImageLink {
     max-width: 100%;
   }
-}
-
-/* Portfolio Specific */
-.artTable {
-  display: flex;
-  justify-content: center;
-}
-
-.artTable tr td {
-  width: 300px;
-  height: 300px;
-  padding: 20px;
-}
-
-.artTable tr td img {
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-
-.artTable tr td img:hover {
-  width: auto;
-  height: auto;
-  max-width: 300px;
-  max-height: 300px;
-  box-shadow: 0 0 12px 6px var(--white-color);
 }

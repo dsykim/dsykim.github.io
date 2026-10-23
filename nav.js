@@ -44,17 +44,20 @@
 
   activeLink.classList.add('active');
 
-  // Set initial underline after fonts/layout settle
-  window.addEventListener('load', () => {
+  function snapUnderline() {
     nav.classList.add('no-transition');
     setUnderline(activeLink);
-    // Remove class after the next paint so transition is only suppressed for initial set
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         nav.classList.remove('no-transition');
       });
     });
-  });
+  }
+
+  // Set initial underline after fonts/layout settle
+  window.addEventListener('load', snapUnderline);
+
+  window.addEventListener('resize', snapUnderline);
 
   // Hover: slide to hovered link
   links.forEach(a => {
