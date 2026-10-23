@@ -62,8 +62,6 @@
   // Set initial underline after fonts/layout settle
   window.addEventListener('load', snapUnderline);
 
-  // Link sizes are fluid, so re-measure whenever the viewport changes
-  // (window resize, phone rotation)
   window.addEventListener('resize', snapUnderline);
 
   // Hover: slide to hovered link
