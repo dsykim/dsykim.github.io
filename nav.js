@@ -2,6 +2,9 @@
   // --- Inject nav HTML ---
   const navHTML = `
     <a class="bigName" href="index.html">David Kim</a>
+    <button class="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-right">
+      <span></span><span></span><span></span>
+    </button>
     <div id="nav-right">
       <nav>
         <ul>
@@ -44,9 +47,11 @@
 
   activeLink.classList.add('active');
 
+  // Snap the underline to the active link without animating
   function snapUnderline() {
     nav.classList.add('no-transition');
     setUnderline(activeLink);
+    // Remove class after the next paint so the transition is only suppressed for this update
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         nav.classList.remove('no-transition');
@@ -57,6 +62,8 @@
   // Set initial underline after fonts/layout settle
   window.addEventListener('load', snapUnderline);
 
+  // Link sizes are fluid, so re-measure whenever the viewport changes
+  // (window resize, phone rotation)
   window.addEventListener('resize', snapUnderline);
 
   // Hover: slide to hovered link
@@ -66,4 +73,30 @@
 
   // Mouse leave nav: snap back to active
   nav.addEventListener('mouseleave', () => setUnderline(activeLink));
+
+  // --- Collapsed menu ---
+  const toggle = placeholder.querySelector('.menuToggle');
+
+  function setMenu(open) {
+    placeholder.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  toggle.addEventListener('click', () => setMenu(!placeholder.classList.contains('open')));
+
+  placeholder.querySelectorAll('#nav-right a').forEach(a => {
+    a.addEventListener('click', () => setMenu(false));
+  });
+
+  document.addEventListener('click', e => {
+    if (!placeholder.contains(e.target)) setMenu(false);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && placeholder.classList.contains('open')) {
+      setMenu(false);
+      toggle.focus();
+    }
+  });
 })();
